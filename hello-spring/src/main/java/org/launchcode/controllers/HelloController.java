@@ -55,8 +55,9 @@ public class HelloController {
     @ResponseBody
     public String helloPost(HttpServletRequest request) {
         String name = request.getParameter("name");
+        String language = request.getParameter("language");
 
-        return "Hello " + name;
+        return createMessage(name, language);
     }
 
     @RequestMapping(value = "hello/{name}")
@@ -69,5 +70,24 @@ public class HelloController {
 
     public String goodbye() {
         return "redirect:/";
+    }
+
+    public String createMessage(String name, String language) {
+        if (language.equals("English")) {
+            return "Hello " + name;
+        } else if (language.equals("Spanish")) {
+            return "Hola " + name;
+
+        } else if (language.equals("French")) {
+            return "Bonjour " + name;
+
+        } else if (language.equals("Japanese")) {
+            return "こんにちは " + name;
+
+        } else {
+            return "Ciao " + name;
+
+        }
+
     }
 }
