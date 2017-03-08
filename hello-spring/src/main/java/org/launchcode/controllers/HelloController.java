@@ -36,6 +36,12 @@ public class HelloController {
     public String helloForm() {
         String html = "<form method='post'>" +
                 "<input type='text' name='name' />" +
+                "<select name='language'>" +
+                "   <option value='English' >English</option>" +
+                "   <option value='Spanish' >Spanish</option>" +
+                "   <option value='French' >French</option>" +
+                "   <option value='Japanese' selected>Japanese</option>" +
+                "   <option value='Italian' >Italian</option>" +
                 "<input type='submit' value='Greet Me!' />" +
                 "</form>";
 
